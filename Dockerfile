@@ -14,10 +14,10 @@ VOLUME /var/www/html
 
 ENV WORDPRESS_VERSION 4.1.0
 ENV WORDPRESS_UPSTREAM_VERSION 4.1
-ENV WORDPRESS_SHA1 f0437c96ae3d8acaba3579566f1346f4cd06468e
+ENV WORDPRESS_SHA1 cd78a35a22c07ea952b354de37e3b6cf43bd7aaf
 
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
-RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_UPSTREAM_VERSION}.tar.gz \
+RUN curl -o wordpress.tar.gz -SL https://ja.wordpress.org/wordpress-${WORDPRESS_UPSTREAM_VERSION}-ja.tar.gz \
 	&& echo "$WORDPRESS_SHA1 *wordpress.tar.gz" | sha1sum -c - \
 	&& tar -xzf wordpress.tar.gz -C /usr/src/ \
 	&& rm wordpress.tar.gz
